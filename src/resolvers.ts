@@ -36,5 +36,15 @@ export const resolvers = {
         { new: true }
       );
     },
+    deletePost: async (
+      parent: any,
+      args: { id: string },
+      context: any,
+      info: any
+    ) => {
+      const { id } = args;
+      await Post.findByIdAndDelete(id);
+      return "deleted";
+    },
   },
 };
