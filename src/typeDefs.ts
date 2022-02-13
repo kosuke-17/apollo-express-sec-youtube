@@ -10,4 +10,12 @@ export const typeDefs = gql`
     hello: String
     getAll: [Post]
   }
+
+  input PostInput {
+    title: String
+    description: String
+  }
+  type Mutation {
+    createPost(post: PostInput): Post
+  }
 `;
